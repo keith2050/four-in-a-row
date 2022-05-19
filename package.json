@@ -1,0 +1,20 @@
+{
+  "name": "four-in-a-row",
+  "version": "1.0.0",
+  "description": "four in a row game to be run on NodeJS",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Keith Michael Turnas",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
