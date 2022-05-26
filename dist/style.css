@@ -1,0 +1,13 @@
+#test {
+    color: gray;
+}
+
+.player {
+    background-color:yellow;
+    border-radius:40%;
+    border:none;
+    display:flex;
+    align-items: left;
+
+
+}
