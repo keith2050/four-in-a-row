@@ -1,4 +1,4 @@
-const NUMBER_OF_ROWS    = 6
+const NUMBER_OF_ROWS    = 7
 const RED               = 1
 const YELLOW            = 2
 const RC  = "img/red_checker.png"
@@ -51,7 +51,7 @@ function playermovehdlr(ce){
 
 
 
-    document.querySelector("#gameBoard").rows[board[currentMove].lastIndexOf(0)].cells[currentMove].innerText= "hello"
+    document.querySelector("#gameBoard").rows[board[currentMove].lastIndexOf(0) + 1].cells[currentMove].innerHTML = "hi"
 
 
 
