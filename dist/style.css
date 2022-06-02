@@ -1,11 +1,23 @@
-
-
-.player {
-    background-color:yellow;
-    border-radius:40%;
-    border:none;
-    display:flex;
-    align-items: left;
-
-
+.redPlayer {
+    background-color: red;
+    border-radius:    40%;
+    border:           none;
+    display:          flex;
+    align-items:      self-end
 }
+
+.yellowPlayer {
+    background-color: yellow;
+    border-radius:    40%;
+    border:           none;
+    display:          flex;
+    align-items:      self-end
+}
+
+
+
+
+
+
+
+
