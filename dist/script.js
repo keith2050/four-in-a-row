@@ -51,8 +51,14 @@ function playermovehdlr(ce){
 
 
 
-    document.querySelector("#gameBoard").rows[board[currentMove].lastIndexOf(0) + 1].cells[currentMove].innerHTML = "hi"
-
+    var targetRow = document.querySelector("#gameBoard").rows[board[currentMove].lastIndexOf(0) + 1];
+    var targetCell = targetRow.cells[currentMove];
+    if(currentPlayer==RED){
+        targetCell.getElementsByTagName("img")[0].setAttribute("src",RC);
+    }
+    else{
+        targetCell.getElementsByTagName("img")[0].setAttribute("src",YC)
+    }
 
 
 
