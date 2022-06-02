@@ -1,9 +1,4 @@
 
-    function playermovehdlr(){
-    alert("button pressed");
-}
-
-
 const NUMBER_OF_ROWS    = 6;
 
 const RED               = 1;
@@ -40,46 +35,72 @@ var columnString;
 
 var fourVertical = new RegExp("1{4}|2{4}");
 
+var noMoveMade = true;
+
+    function playermovehdlr(ce) {
+       var eventObject = ce;
+       alert(ce.target.getAttribute("id"))
+
+        //hide buttons until current move is fully processed
+       // document.querySelector("#buttonrow").setAttribute("style", "visibility:hidden");
+
+        //set color for next player
+        var buttons = document.querySelectorAll("button");
+        for (var i = 0; i < 7; i++) {
+            if (buttons[i].getAttribute("class") == "redPlayer") {
+                buttons[i].setAttribute("class", "yellowPlayer");
+                continue;
+            }
+            buttons[i].setAttribute("class", "redPlayer")
+        }
+
+        /*
+            PUT ALL THE MOVE PROCESSING CODE BELOW HERE. INCLUDING DETERMINING IF THERE IS A WINNER
+         */
+
+        noMoveMade = false;
+    };//end function playermovehdlr
+
+
+
+
+
 
 
 //first player is red
 
 currentPlayer = RED;
+document.addEventListener("click",playermovehdlr)
 
-
+alert("end of script code")
 
 
 
 //process moves until winner or number of moves is 42
 
-for(var i = 0; i < 42; i++){
-
-
+//for(var i = 0; i < 42; i++){
 
 //update move buttons
 
-//   change .player background-color
-
-//   remove buttons for full columns
+/*
+//   hide buttons for full columns
 
 //      for every button
 
 //          if button column full
 
-//             disable/hide button
+//             set  button visibility to hidden
 
+//        otherwise  set visibility to visible
 
-
-//get currentPlayer move
-
-//on button click
 
 //   hide buttons
 
 //   record player move
 
-
-
+while(noMoveMade){
+    continue;
+    }
 
 //update board
 
@@ -250,6 +271,4 @@ for(var i = 0; i < 42; i++){
 
 
 
-document.getElementById("gameBoard").rows[2].cells[1].innerHTML = "<IMG src=\"img/red_checker.png\">"
-
-
+*/
