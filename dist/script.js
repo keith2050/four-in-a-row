@@ -105,7 +105,7 @@ function playermovehdlr(ce){
             };//close j<=3
 
             //check up diagonal
-            if( (k >= 3)                           &&git
+            if( (k >= 3)                           &&
                 (board[j][k]     == currentPlayer) &&
                 (board[j+1][k-1] == currentPlayer) &&
                 (board[j+2][k-2] == currentPlayer) &&
