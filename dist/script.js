@@ -105,11 +105,11 @@ function playermovehdlr(ce){
             };//close j<=3
 
             //check up diagonal
-            if( (k >= 3)                           &&
+            if( (k >= 3)                           &&git
                 (board[j][k]     == currentPlayer) &&
-                (board[j+1][k+1] == currentPlayer) &&
-                (board[j+2][k+2] == currentPlayer) &&
-                (board[j+3][k+3] == currentPlayer)){
+                (board[j+1][k-1] == currentPlayer) &&
+                (board[j+2][k-2] == currentPlayer) &&
+                (board[j+3][k-3] == currentPlayer)){
                 if(currentPlayer == RED){
                     endGame("red");
                 };
