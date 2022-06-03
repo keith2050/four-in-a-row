@@ -1,3 +1,8 @@
+//1.CHANGE CHECKERS TO CHECKERS WITH BOARD MATCHING OR TRANSPARENT BACKGROUND
+//2.FILL IN END GAME PROCEDURES
+//3.REFACTOR
+//  a.[COLUMNS][ROWS] TO [ROWS][COLUMNS]
+//  b.NUMBER_OF_ROWS INCLUDES BUTTON ROW, REMOVE BUTTON ROW FROM GAME CODE
 const NUMBER_OF_ROWS    = 7
 const RED               = 1
 const YELLOW            = 2
@@ -33,6 +38,9 @@ function endGame(gameWinner){
 
 
 function playermovehdlr(ce){
+
+    //IF CE.TARGET IS NOT A BUTTON, DO NOTHING AND RETURN
+
 
     //hide buttons
     for(let i = 0;i<7;i++){
