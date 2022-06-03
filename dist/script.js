@@ -16,14 +16,18 @@ var currentPlayer = RED;
 var currentMove;
 var playerChecker = RC;
 var columnString;
-var fourVertical = new RegExp("1{4}|2{4}");
-
+var gameWinner;
 
 
 
 
 document.addEventListener("click",playermovehdlr);
 
+
+function endGame(gameWinner){
+    alert("end game procedures");
+    alert(gameWinner + " wins");
+};
 
 
 
@@ -54,67 +58,62 @@ function playermovehdlr(ce){
     }
 
 
-    alert("enter check for winner")
     //check for winner
 
     //go left to right: j = 0 to 6
-    for(var j=0; j<7;j++){
+    for(var j=0; j<4;j++){
 
         //go bottom to top: k = 0 to 5
-        for(var k=0; k<6; k++){
-
-            //check for 4 in a row vertically
-            //Check for string of 4 straight
-            //of appropriate color in 1 column
-            //fourVertical is a regex
-            columnString = board[currentMove].join('');
-            if(fourVertical.test(columnString)){
-                if(currentPlayer == RED){
-                    alert("red wins")
-                };
-                alert("yellow wins")
-            };//close fourVertical test
-
+        for(var k=0; k<NUMBER_OF_ROWS; k++){
 
             //check for 4 in a row horizontally
-            //For every one of current player's color
-            //in column check next 3 rows at same
-            //position for appropriate color
-            if((j <= 3) &&
-                (board[j][k]   == currentPlayer) &&
+            if( (board[j][k]   == currentPlayer) &&
                 (board[j+1][k] == currentPlayer) &&
                 (board[j+2][k] == currentPlayer) &&
                 (board[j+3][k] == currentPlayer)){
                 if(currentPlayer == RED){
-                    alert("red wins")
+                    endGame("red");
                 };
-                alert("yellow wins")
+                endGame("yellow");
+            };//close j<=3
+
+
+            //check for 4 in a row vertically
+            if( (k <= 3)                         &&
+                (board[j][k]   == currentPlayer) &&
+                (board[j][k+1] == currentPlayer) &&
+                (board[j][k+2] == currentPlayer) &&
+                (board[j][k+3] == currentPlayer)){
+                if(currentPlayer == RED){
+                    endGame("red");
+                }
+                endGame("yellow");
             };//close j<=3
 
 
             //check for 4 in a row diagonally
             //check down diagonal
-            if(((j <= 3) && (k >= 3)) &&
-                (board[j][k]     == currentPlayer) &&
-                (board[j+1][k-1] == currentPlayer) &&
-                (board[j+2][k-2] == currentPlayer) &&
-                (board[j+3][k-3] == currentPlayer)){
-                if(currentPlayer == RED){
-                    alert("red wins")
-                };
-                alert("yellow wins")
-            };//close j<=3
-
-            //check up diagonal
-            if(((j <= 3) && (k <= 3)) &&
+            if( (k <= 3)                           &&
                 (board[j][k]     == currentPlayer) &&
                 (board[j+1][k+1] == currentPlayer) &&
                 (board[j+2][k+2] == currentPlayer) &&
                 (board[j+3][k+3] == currentPlayer)){
                 if(currentPlayer == RED){
-                    alert("red wins")//red wins
+                    endGame("red");
                 };
-                alert("yellow wins")/yellow wins
+                endGame("yellow");
+            };//close j<=3
+
+            //check up diagonal
+            if( (k >= 3)                           &&
+                (board[j][k]     == currentPlayer) &&
+                (board[j+1][k+1] == currentPlayer) &&
+                (board[j+2][k+2] == currentPlayer) &&
+                (board[j+3][k+3] == currentPlayer)){
+                if(currentPlayer == RED){
+                    endGame("red");
+                };
+                endGame("yellow");
             };//close. j<=3 k <= 3
         };//close k
     };//close j
@@ -124,6 +123,7 @@ function playermovehdlr(ce){
         ;//output draw message
         break;
     }*/
+
 
 //switch players
 for(let i = 0;i<7;i++){
@@ -138,8 +138,6 @@ for(let i = 0;i<7;i++){
         playerChecker = RC;
     };
 };
-
-
 
 
 //show buttons
