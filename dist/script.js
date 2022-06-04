@@ -1,6 +1,10 @@
 
 //1. DONE - change checkers to checkers with board matching or transparent background
 //   DONE - clicks outside of a button now will not change board
+//  MOVE COLUMNS CLOSER
+//  CHANGE COLUMN DROP (HEADER) ROW
+//  ADD DROPPING CHECKER ANIMATION
+//
 //2.FILL IN END GAME PROCEDURES
 //3.REFACTOR
 //  a.[COLUMNS][ROWS] TO [ROWS][COLUMNS]
